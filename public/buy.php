@@ -4,8 +4,9 @@
     require("../includes/config.php");   
     if ($_SERVER["REQUEST_METHOD"] == "GET")
     {
+        $symbol = empty($_GET["symbol"]) ? "" : $_GET["symbol"];
     // render
-     render("buy_form.php", ["title" => "Buy"]);
+     render("buy_form.php", ["title" => "Buy", "symbol" => $symbol]);
     }
     // if form is submitted
     else if ($_SERVER["REQUEST_METHOD"] == "POST")
